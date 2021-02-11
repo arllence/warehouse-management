@@ -1,0 +1,42 @@
+{% extends 'RFID/base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}User{% endblock %}
+
+{% block content %}
+<div class="row">
+  <div class="col-sm-5">
+    <div class="message">
+      {% if message %}
+        <h6>{{ message }}</h6>
+      {% endif %}
+    </div>
+    <div class="message">
+      {% if error %}
+        <h6>{{ error }}</h6>
+      {% endif %}
+    </div>
+    <div class="box">
+      <div class="box-title">
+        <h5>Add New User</h5>
+      </div>
+      <form action="user" method="post" class="form-group">
+        {% csrf_token %}
+        {{add_user_form |crispy}}
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+    </div>
+  </div>
+  <div class="col-sm-5">
+    <div class="box">
+      <div class="box-title">
+        <h5>Update/Delete Existing User</h5>
+      </div>
+      <form action="get-user" method="post" class="form-group">
+        {% csrf_token %}
+        {{get_id_form |crispy}}
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
