@@ -30,6 +30,10 @@ class HomePageView(LoginRequiredMixin, View):
 
 
     def get(self, request):
+        if request.user.is_staff or  request.user.is_superuser:
+            pass
+        else:
+            return redirect('/')
         form = SearchBar()
         context = {'form':form}
         return render(request, self.template_name, context)

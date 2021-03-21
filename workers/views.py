@@ -1,5 +1,5 @@
 #Django imports
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse,redirect
 from django.views import View
 
 
@@ -13,7 +13,13 @@ from RFID.models import cart
 # Create your views here.
 class UserHomePage(View):
     template = 'student/home.html'
+    login_url = '/RFID/login/'
+
     def get(self, request):
+        if request.user.is_authenticated:
+            pass
+        else:
+            return redirect(self.login_url)
         searchbar = SearchBar()
         checkform = Operation()
         context = {'searchForm':searchbar, 'checkform':checkform}
