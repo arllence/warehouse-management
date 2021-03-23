@@ -53,7 +53,7 @@ class AddObject(forms.ModelForm):
             "location": "",
         }
 
-        widgets = {'object_id' : TextInput(attrs={'class' : 'form-field', 'placeholder' : ' Object ID'}),
+        widgets = {'object_id' : TextInput(attrs={'class' : 'form-field', 'placeholder' : ' Product ID'}),
                     'name' : TextInput(attrs={'class' : 'form-field', 'placeholder' : ' Name'}),
                     'max_time' : TextInput(attrs={'class' : 'form-field', 'placeholder' : ' Maximum Checkout in days'}),
                     }
@@ -61,7 +61,7 @@ class AddObject(forms.ModelForm):
 
 class GetObject(forms.Form):
     object_id = forms.CharField(max_length=32, label='', required=False,
-    widget=forms.TextInput(attrs={'class': 'form-field', 'placeholder': ' Object ID'})
+    widget=forms.TextInput(attrs={'class': 'form-field', 'placeholder': ' Product ID'})
     )
 
     name = forms.CharField(max_length=60, label='', required=True,

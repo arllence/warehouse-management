@@ -25,23 +25,31 @@
   <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
   <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
 </head>
-
+<style>
+  /* body{
+    background-image: url('../../RFID/static/images/bg1.jpeg');
+    background-color: #cccccc;
+  } */
+  side-bar list-group a h5:hover {
+    color: thistle !important;
+  }
+</style>
 <body>
   <main>
     <div class="container-fluid">
       <div class="row header">
         <div class="col-sm-6">
           <div class="header-title">
-            <h1 style="color:white">University of Nairobi</h1>
+            <h1 style="color:white">M-Warehouse manager</h1>
           </div>
         </div>
         <div class="col-sm-6">
           <div class="header-title">
-            <h3 style="color:white">Warehouse Management System</h3>
+            <h3 style="color:white"></h3>
           </div>
         </div>
       </div>
-      <div id="new-container"
+      <div id="new-container">
         <div class="row">
           <div class="col-sm-2 side-bar">
             <div class="list-group list-group-flush">
@@ -50,12 +58,12 @@
               <a href="{% url 'user' %}" class="list-group-item side-bar-buttons">
                 <h5>Users</h5></a>
               <a href="{% url 'object' %}" class="list-group-item side-bar-buttons">
-                <h5>Objects</h5></a>
+                <h5>Products</h5></a>
               <a href="{% url 'logout' %}" class="list-group-item side-bar-buttons">
                 <h5>Log out</h5></a>
             </div>
           </div>
-          <div class="col-sm-10 main">
+          <div class="col-sm-10 main" style="backgroun-color:transparent !important">
             {% block content %}
             {% endblock %}
           </div>
